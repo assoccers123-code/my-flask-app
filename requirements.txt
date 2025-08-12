@@ -1,7 +1,2 @@
-<<<<<<< HEAD
 flask
 gunicorn
-=======
-flask
-gunicorn
->>>>>>> 34987ec (Updated insta.py to redirect after login)
